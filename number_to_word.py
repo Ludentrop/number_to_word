@@ -32,7 +32,7 @@ def num2words(num_string):
     word_string = ''
     for mag, name in _magnitude_list:
         if mag >= num_length:
-            return word_string
+            return word_string.replace("  ", " ").strip().title()
         else:
             hundreds, tens, ones = num_string[-mag-3], num_string[-mag-2], num_string[-mag-1]
             if not (hundreds == tens == ones == '0'):
